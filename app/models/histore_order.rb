@@ -1,0 +1,2 @@
+class HistoreOrder < ApplicationRecord
+end

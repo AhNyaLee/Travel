@@ -1,0 +1,2 @@
+class HistoreOrdersController < ApplicationController
+end
