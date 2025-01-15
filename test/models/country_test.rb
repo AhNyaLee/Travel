@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ClientListControllerTest < ActionDispatch::IntegrationTest
+class CountryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
