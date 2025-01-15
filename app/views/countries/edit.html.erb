@@ -1,0 +1,37 @@
+<div class="edit">
+<h2 class="hero_title">Редактирование данных о стране: </h2>
+<div class="form">
+<%= form_with model: @country  do |form|%>
+<div class="form__grid-item">
+ <p class="form__labe"><%=form.label :name, 'Название страны:'%></p>
+ <p class="form__input"><%=form.text_field :name, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label :country_code, 'Код страны:'%></p>
+ <p class="form__input"><%=form.text_field :country_code, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label :language, 'Язык:'%></p>
+ <p class="form__input"><%=form.text_field :language, required: true %></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label :currency, 'Валюта:'%></p>
+ <p class="form__input"><%=form.text_field :currency, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label  :timezone, 'Часовой пояс:'%></p>
+ <p class="form__input"><%=form.text_field :timezone, required: false%></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label :capital, 'Столица:'%></p>
+ <p class="form__input"><%=form.text_field :capital, required: false%></p>
+ </div>
+ <div class="edit_button">
+    <button class=" button ">
+      <%= form.submit 'Изменить страну' %>
+    </button>
+      <p class=" button "><%=link_to "Все клиенты", countries_path%></p>
+  </div>
+<%end%>
+</div>
+</div>

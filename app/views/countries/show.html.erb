@@ -1,0 +1,26 @@
+<div class="show">
+<h1 class="hero_title">Страна: <%=@country.name%></h1>
+<div class="show_content">
+ <div class="client-labels">
+        <p class="show_label">Название страны:</p>
+        <p class="show_label">Код страны:</p>
+        <p class="show_label">Язык:</p>
+        <p class="show_label">Валюта:</p>
+        <p class="show_label">Часовой пояс:</p>
+         <p class="show_label">Столица:</p>
+ </div>
+    <div class="client-details">
+        <p class="show_input"><%=@country.name%></p>
+        <p class="show_input"><%=@country.country_code%></p>
+        <p class="show_input"><%=@country.language%></p>
+         <p class="show_input"><%=@country.currency%></p>
+        <p class="show_input"><%=@country.timezone%></p>
+        <p class="show_input"><%=@country.capital%></p>
+    </div>
+</div>
+<div class="show_button" >
+ <p class="new_button button "><%=link_to "Все страны",countries_path %></p>
+<p class="button"><%=link_to "Изменить данные о стране ", edit_country_path(@country)%></p>
+<div class="show_button button "><%= button_to 'Удалить страну', country_path(@country), method: :delete %></div>
+</div>
+</div>

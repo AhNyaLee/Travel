@@ -1,0 +1,9 @@
+<div class="index">
+  <h1 class="hero_title">Страны: </h1>
+  <div class="index_сountry">
+    <%@country.each do |client|%>
+      <p class="index_client_lists_content"><%= link_to "Страна: #{client.name}", country_path(id: client.id) %></p>
+    <%end%>
+  </div>
+  <div class="index_button button"><span><%=link_to "Добавить страну ",new_country_path(@country)%></span></div>
+</div>
