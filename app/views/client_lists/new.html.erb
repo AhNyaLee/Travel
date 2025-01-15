@@ -1,0 +1,42 @@
+<div class="new">
+<h2 class="hero_title">Новый клиент:</h2>
+  
+<div class="form">
+<%= form_with model: @client_list  do |form|%>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :id_client, 'Номер клиента:'%></p>
+  <p class="form__input"><%=form.number_field :id_client, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :name, 'Имя клиента:'%></p>
+  <p class="form__input"><%=form.text_field :name, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :surname, 'Фамилия клиента:'%></p>
+  <p class="form__input"><%=form.text_field :surname, required: true %></p>
+ </div>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :patronymic, 'Отчество клиента:'%></p>
+  <p class="form__input"><%=form.text_field :patronymic, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :birthday, 'День рождение клиента:'%></p>
+  <p class="form__input"><%=form.text_field :birthday, required: true%></p>
+ </div>
+ <div class="form__grid-item">
+  <p class="form__labe"><%=form.label :phone, 'Номер телефона клиента:'%></p>
+  <p class="form__input"><%=form.telephone_field :phone, required: false%></p>
+ </div>
+ <div class="form__grid-item">
+ <p class="form__labe"><%=form.label :email, 'Почта клиента:'%></p>
+ <p class="form__input"><%=form.email_field :email, required: false%></p>
+ </div>
+ <div class= "new_flex">
+  <button class="new_button button ">
+    <%= form.submit 'Создать клиента' %>
+  </button>
+  <p class="new_button button "><%=link_to "Все клиенты", client_lists_path%></p>
+  </div>
+<%end%>
+</div>
+</div>

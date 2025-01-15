@@ -1,0 +1,26 @@
+.index{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 150px;
+    padding-bottom: 36px;
+}
+
+.index_client_lists{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:20px;
+}
+
+.index_client_lists_content{
+    font-size: 20px ;
+    margin-bottom:15px;
+
+}
+
+.index_button{
+    position: relative;
+    z-index: 2;
+}

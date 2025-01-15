@@ -1,0 +1,62 @@
+.show{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top:  35px;
+    padding-bottom: 50px;
+}
+
+.show_button button{
+    position: relative;
+    background-color: none;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--white);
+}
+
+.show_content{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap:12px;
+    padding-bottom: 20px;
+}
+
+.client-labels {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.show_input, .show_label{
+    position: relative; 
+    padding-bottom: 20px;
+}
+
+.show_label::after, .show_input::after {
+    content: "";
+    display: block;
+    width: 110%;
+    height: 1px;
+    background-color: #d7defa;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+.show_label:hover::after, .show_input:hover::after {
+    background-color: var(--bluviolet);
+    opacity: 1;
+  }
+
+.show_button{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}

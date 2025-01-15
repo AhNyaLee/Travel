@@ -1,0 +1,24 @@
+<div class="show">
+<h1 class="hero_title">Клиент: <%=@client_list.name%></h1>
+<div class="show_content">
+ <div class="client-labels">
+        <p class="show_label">Номер клиента:</p>
+        <p class="show_label">ФИО:</p>
+        <p class="show_label">Дата рождения:</p>
+        <p class="show_label">Номер телефона:</p>
+        <p class="show_label">Email:</p>
+ </div>
+    <div class="client-details">
+        <p class="show_input"><%=@client_list.id_client%></p>
+        <p class="show_input"><%=@client_list.fullname%></p>
+        <p class="show_input"><%=@client_list.birthday%></p>
+        <p class="show_input"><%=@client_list.phone%></p>
+        <p class="show_input"><%=@client_list.email%></p>
+    </div>
+</div>
+<div class="show_button" >
+<p class="button"><%=link_to "Все клиенты", client_lists_path%></p>
+<p class="button"><%=link_to "Изменить данные о клиенте ", edit_client_list_path(@client_list)%></p>
+<div class="show_button button "><%= button_to 'Удалить клиента', client_list_path(@client_list), method: :delete %></div>
+</div>
+</div>

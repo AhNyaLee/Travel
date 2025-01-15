@@ -1,4 +1,4 @@
-class ClientListController < ApplicationController
+class ClientListsController < ApplicationController
 
   before_action :set_client_list, only: %i[update show destroy edit]
   def create

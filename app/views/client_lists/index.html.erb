@@ -1,0 +1,9 @@
+<div class="index">
+  <h1 class="hero_title">Клиенты: </h1>
+  <div class="index_client_lists">
+    <%@client_list.each do |client|%>
+      <p class="index_client_lists_content"><%= link_to "Клиент: #{client.fullname}", client_list_path(id: client.id) %></p>
+    <%end%>
+  </div>
+  <div class="index_button button"><span><%=link_to "Добавить клиента ", new_client_list_path(@client_list)%></span></div>
+</div>
