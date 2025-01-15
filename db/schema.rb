@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_15_192445) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_15_201420) do
   create_table "client_lists", force: :cascade do |t|
     t.integer "id_client"
     t.text "name"
@@ -22,5 +22,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_15_192445) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["id_client"], name: "index_client_lists_on_id_client"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.text "country_code"
+    t.text "name"
+    t.text "language"
+    t.text "currency"
+    t.text "timezone"
+    t.text "capital"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end
