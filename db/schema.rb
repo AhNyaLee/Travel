@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_15_201420) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_15_202748) do
   create_table "client_lists", force: :cascade do |t|
     t.integer "id_client"
     t.text "name"
@@ -31,6 +31,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_15_201420) do
     t.text "currency"
     t.text "timezone"
     t.text "capital"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "histore_orders", force: :cascade do |t|
+    t.integer "number_order"
+    t.text "name"
+    t.text "start_date"
+    t.text "end_date"
+    t.integer "price"
+    t.integer "id_client"
+    t.integer "id_country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

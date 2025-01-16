@@ -2,6 +2,7 @@
 <h1 class="hero_title">Страна: <%=@country.name%></h1>
 <div class="show_content">
  <div class="client-labels">
+        <p class="show_label">ID страны:</p>
         <p class="show_label">Название страны:</p>
         <p class="show_label">Код страны:</p>
         <p class="show_label">Язык:</p>
@@ -10,6 +11,7 @@
          <p class="show_label">Столица:</p>
  </div>
     <div class="client-details">
+        <p class="show_input"><%=@country.id%></p>
         <p class="show_input"><%=@country.name%></p>
         <p class="show_input"><%=@country.country_code%></p>
         <p class="show_input"><%=@country.language%></p>
