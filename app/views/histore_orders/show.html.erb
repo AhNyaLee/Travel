@@ -1,5 +1,5 @@
 <div class="show">
-<h1 class="hero_title">Заказ: <%=@country.name%></h1>
+<h1 class="hero_title">Заказ: <%=@order.name%></h1>
 <div class="show_content">
  <div class="client-labels">
         <p class="show_label">Номер заказа:</p>
@@ -16,13 +16,13 @@
         <p class="show_input"><%=@order.start_date%></p>
          <p class="show_input"><%=@order.end_date%></p>
         <p class="show_input"><%=@order.price%></p>
-        <p class="show_input"><%=@order.id_clienta%></p>
+        <p class="show_input"><%=@order.id_client%></p>
         <p class="show_input"><%=@order.id_country%></p>
     </div>
 </div>
 <div class="show_button" >
  <p class="new_button button "><%=link_to "Все заказы",histore_orders_path %></p>
-<p class="button"><%=link_to "Изменить данные о заказе ", edit_histore_orders_path(@order)%></p>
-<div class="show_button button "><%= button_to 'Удалить заказ', histore_orders_path(@order), method: :delete %></div>
+<p class="button"><%=link_to "Изменить данные о заказе ", edit_histore_order_path(@order)%></p>
+<div class="show_button button "><%= button_to 'Удалить заказ', histore_order_path(@order), method: :delete %></div>
 </div>
 </div>

@@ -13,23 +13,23 @@
  </div>
  <div class="form__grid-item">
  <p class="form__labe"><%=form.label :start_date, 'Начало тура:'%></p>
- <p class="form__input"><%=form.text_field :start_date, required: true %></p>
+<p class="form__input"><%= form.date_field :start_date, required: true %></p>
  </div>
  <div class="form__grid-item">
  <p class="form__labe"><%=form.label :end_date, 'Конец тура:'%></p>
- <p class="form__input"><%=form.text_field :end_date, required: true%></p>
+<p class="form__input"><%= form.date_field :end_date, required: true %></p>
  </div>
  <div class="form__grid-item">
  <p class="form__labe"><%=form.label  :price, 'Цена тура:'%></p>
- <p class="form__input"><%=form.text_field :price, required: false%></p>
+ <p class="form__input"><%=form.number_field :price, required: false%></p>
  </div>
  <div class="form__grid-item">
- <p class="form__labe"><%=form.label :id_clienta, 'ID клиента:'%></p>
- <p class="form__input"><%=form.text_field :id_clienta, required: false%></p>
+ <p class="form__labe"><%=form.label :id_client, 'ID клиента:'%></p>
+ <p class="form__input"><%=form.number_field :id_client, required: false%></p>
  </div>
   <div class="form__grid-item">
  <p class="form__labe"><%=form.label :id_country, 'ID страны:'%></p>
- <p class="form__input"><%=form.text_field :id_country, required: false%></p>
+ <p class="form__input"><%=form.number_field :id_country, required: false%></p>
  </div>
  
  <div class= "new_flex">

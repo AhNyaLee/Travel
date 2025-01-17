@@ -23,8 +23,8 @@
  <p class="form__input"><%=form.text_field :price, required: false%></p>
  </div>
  <div class="form__grid-item">
- <p class="form__labe"><%=form.label :id_clienta, 'ID клиента:'%></p>
- <p class="form__input"><%=form.text_field :id_clienta, required: false%></p>
+ <p class="form__labe"><%=form.label :id_cliena, 'ID клиента:'%></p>
+ <p class="form__input"><%=form.text_field :id_client, required: false%></p>
  </div>
   <div class="form__grid-item">
  <p class="form__labe"><%=form.label :id_country, 'ID страны:'%></p>
@@ -34,7 +34,7 @@
     <button class=" button ">
       <%= form.submit 'Изменить заказ' %>
     </button>
-      <p class=" button "><%=link_to "Все заказы", histore_oreders_path%></p>
+      <p class=" button "><%=link_to "Все заказы", histore_orders_path%></p>
   </div>
 <%end%>
 </div>

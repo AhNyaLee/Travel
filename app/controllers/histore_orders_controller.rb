@@ -32,7 +32,7 @@ class HistoreOrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:number_order,:name, :start_date,:end_date,:price,:id_client,:id_country)
+    params.require(:histore_order).permit(:number_order,:name, :start_date,:end_date,:price,:id_client,:id_country)
   end  
 
   def set_order
