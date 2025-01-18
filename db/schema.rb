@@ -42,8 +42,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_15_202748) do
     t.text "end_date"
     t.integer "price"
     t.integer "id_client"
-    t.integer "id_country"
+    t.text "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "histore_orders", "client_lists", column: "id_client"
 end

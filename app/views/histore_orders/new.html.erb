@@ -1,43 +1,57 @@
 <div class="new">
-<h2 class="hero_title">Новый заказ:</h2>
+  <h2 class="hero_title">Новый заказ:</h2>
   
-<div class="form">
-<%= form_with model: @order  do |form|%>
+  <div class="form">
+    <%= form_with model: @order do |form| %>
+      <div class="form__grid-item">
+        <p class="form__label"><%= form.label :number_order, 'Номер заказа:' %></p>
+        <p class="form__input"><%= form.number_field :number_order, required: true %></p>
+      </div>
+      <div class="form__grid-item">
+        <p class="form__label"><%= form.label :name, 'Название тура:' %></p>
+        <p class="form__input"><%= form.text_field :name, required: true %></p>
+      </div>
+      <div class="form__grid-item">
+        <p class="form__label"><%= form.label :start_date, 'Начало тура:' %></p>
+        <p class="form__input"><%= form.date_field :start_date, required: true %></p>
+      </div>
+      <div class="form__grid-item">
+        <p class="form__label"><%= form.label :end_date, 'Конец тура:' %></p>
+        <p class="form__input"><%= form.date_field :end_date, required: true %></p>
+      </div>
+      <div class="form__grid-item">
+        <p class="form__label"><%= form.label :price, 'Цена тура:' %></p>
+        <p class="form__input"><%= form.number_field :price, required: false %></p>
+      </div>
+      <div class="form__grid-item">
+      <p class="form__label"><%= form.label :id_client, 'Клиент:' %></p>
+        <p class="form__input">
+          <%= form.collection_select :id_client, ClientList.all, :id_client, :fullname, prompt: 'Выберите клиента', required: true %>
+        </p>
+      </div>
 <div class="form__grid-item">
- <p class="form__labe"><%=form.label :number_order, 'Номер заказа:'%></p>
- <p class="form__input"><%=form.number_field :number_order, required: true%></p>
- </div>
- <div class="form__grid-item">
- <p class="form__labe"><%=form.label :name, 'Название тура:'%></p>
- <p class="form__input"><%=form.text_field :name, required: true%></p>
- </div>
- <div class="form__grid-item">
- <p class="form__labe"><%=form.label :start_date, 'Начало тура:'%></p>
-<p class="form__input"><%= form.date_field :start_date, required: true %></p>
- </div>
- <div class="form__grid-item">
- <p class="form__labe"><%=form.label :end_date, 'Конец тура:'%></p>
-<p class="form__input"><%= form.date_field :end_date, required: true %></p>
- </div>
- <div class="form__grid-item">
- <p class="form__labe"><%=form.label  :price, 'Цена тура:'%></p>
- <p class="form__input"><%=form.number_field :price, required: false%></p>
- </div>
- <div class="form__grid-item">
- <p class="form__labe"><%=form.label :id_client, 'ID клиента:'%></p>
- <p class="form__input"><%=form.number_field :id_client, required: false%></p>
- </div>
-  <div class="form__grid-item">
- <p class="form__labe"><%=form.label :id_country, 'ID страны:'%></p>
- <p class="form__input"><%=form.number_field :id_country, required: false%></p>
- </div>
- 
- <div class= "new_flex">
-  <button class="new_button button ">
-    <%= form.submit 'Добавить заказ' %>
-  </button>
-  <p class="new_button button "><%=link_to "Все заказы", histore_orders_path %></p>
+  <p class="form__label"><%= form.label :country_id, 'Страны:', class: 'text-black' %></p>
+  <p class="form__input">
+    <div class="form-check-list">
+      <%= form.collection_check_boxes :country_id, Country.all, :id, :name do |b| %>
+        <div class="form-check">
+          <%= b.check_box(class: 'form-check-input') %>
+          <%= b.label(class: 'form-check-label text-black') %>
+        </div>
+      <% end %>
+    </div>
+  </p>
+</div>
+
+      
+      <div class="new_flex">
+        <button class="new_button button">
+          <%= form.submit 'Добавить заказ' %>
+        </button>
+        <p class="new_button button"><%= link_to "Все заказы", histore_orders_path %></p>
+      </div>
+    <% end %>
   </div>
-<%end%>
 </div>
-</div>
+
+

@@ -25,3 +25,16 @@
     line-height: 1;
     color: var(--white);
 }
+
+.text-black {
+    color: black; /* Устанавливаем черный цвет текста */
+  }
+  
+  .form-check-list {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+  }
+  
+  .form-check {
+    margin-bottom: 10px; /* Добавляем отступ между чекбоксами */
+  }

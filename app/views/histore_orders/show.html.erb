@@ -17,7 +17,16 @@
          <p class="show_input"><%=@order.end_date%></p>
         <p class="show_input"><%=@order.price%></p>
         <p class="show_input"><%=@order.id_client%></p>
-        <p class="show_input"><%=@order.id_country%></p>
+        <p class="show_input"> 
+           
+    <% if @order.country_id.blank? %>
+    ID страны не выбрана
+  <% elsif @order.country_id.strip == "" %>
+    ID страны не определен
+  <% else %>
+    <%= @order.country_id.strip %>
+  <% end %>
+        </p>
     </div>
 </div>
 <div class="show_button" >
