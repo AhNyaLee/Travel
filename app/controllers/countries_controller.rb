@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
 
   def create
     country=Country.create(country_params )
-    redirect_to "/countries/#{country.id})"
+    redirect_to "/countries/#{country.id}"
   end
    
   def update
@@ -32,9 +32,8 @@ class CountriesController < ApplicationController
 
   private
   def country_params
-    params.require(:country).permit(:country_code,:name, :language,:currency,:timezone,:capital)
-  end  
-
+    params.require(:country).permit( :country_code, :name, :language, :currency, :timezone, :capital)    
+  end
   def set_country
     @country=Country.find(params[:id])
   end  
