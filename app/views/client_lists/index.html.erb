@@ -1,3 +1,11 @@
+<div class="wrapper">
+  <div class="nvigation">
+  <h2 class="nvigation_content">Навигационные кнопки: </h2>
+  <div class="path">
+     <div class="path_button button"><span><%=link_to "Данные о страннах ", countries_path%></span></div>
+    <div class="path_button button"><span><%=link_to "Данные о заказах ", histore_orders_path%></span></div>
+  </div>
+  </div>
 <div class="index">
   <h1 class="hero_title">Клиенты: </h1>
   <div class="index_client_lists">
@@ -6,4 +14,5 @@
     <%end%>
   </div>
   <div class="index_button button"><span><%=link_to "Добавить клиента ", new_client_list_path(@client_list)%></span></div>
+  </div>
 </div>
