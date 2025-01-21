@@ -16,9 +16,6 @@ class ClientListsController < ApplicationController
     redirect_to "/client_lists"
   end 
   
-  def show 
-  end
-
   def index
     @client_list=ClientList.all
   end
@@ -27,8 +24,7 @@ class ClientListsController < ApplicationController
       @client_list=ClientList.new
   end  
   
-  def edit
-  end  
+ 
 
   private
   def client_list_params

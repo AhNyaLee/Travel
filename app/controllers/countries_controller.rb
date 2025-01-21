@@ -15,9 +15,6 @@ class CountriesController < ApplicationController
     @country.destroy
     redirect_to "/countries"
   end 
-  
-  def show 
-  end
 
   def index
     @country=Country.all
@@ -27,9 +24,6 @@ class CountriesController < ApplicationController
     @country=Country.new
   end  
   
-  def edit
-  end  
-
   private
   def country_params
     params.require(:country).permit( :country_code, :name, :language, :currency, :timezone, :capital)    

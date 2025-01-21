@@ -4,7 +4,7 @@ class HistoreOrdersController < ApplicationController
   def create
     @order = HistoreOrder.new(order_params)
     if @order.save!
-      redirect_to @order, notice: 'Заказ успешно создан.'
+      redirect_to @order
     else
       Rails.logger.error(@order.errors.full_messages)
       flash.now[:alert] = @order.errors.full_messages.to_sentence
@@ -22,9 +22,6 @@ class HistoreOrdersController < ApplicationController
     redirect_to "/histore_orders"
   end 
   
-  def show 
-  end
-
   def index
     @order=HistoreOrder.all
   end
@@ -33,9 +30,6 @@ class HistoreOrdersController < ApplicationController
     @order=HistoreOrder.new
   end  
   
-  def edit
-  end  
-
   private
   def order_params
     params.require(:histore_order).permit(:number_order, :name, :start_date, :end_date, :price, :id_client, country_id: [])
