@@ -1,7 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
-
+require_relative "../lib/database_error.rb"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -16,7 +16,18 @@ module Travel
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
     config.exceptions_app = self.routes
-
+    config.middleware.use DatabaseErrorHandler
+    config.after_initialize do
+      begin
+        ActiveRecord::Base.connection
+      rescue ActiveRecord::NoDatabaseError
+        Rails.logger.error "Database does not exist. Run migrations or check your configuration."
+        abort("Database is not set up. Please run `rails db:setup`.")
+      rescue PG::ConnectionBad => e
+        Rails.logger.error "Could not connect to the database: #{e.message}"
+        abort("Unable to connect to the database.")
+      end
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
