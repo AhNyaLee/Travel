@@ -38,10 +38,10 @@
     padding-bottom: 20px;
 }
 
-.show_label::after, .show_input::after {
+.show_label::after {
     content: "";
     display: block;
-    width: 110%;
+    width: 400%;
     height: 1px;
     background-color: #d7defa;
     position: absolute;
@@ -49,7 +49,7 @@
     left: 0;
     transition: background-color 0.3s, opacity 0.3s;
 }
-.show_label:hover::after, .show_input:hover::after {
+.show_label:hover::after {
     background-color: var(--bluviolet);
     opacity: 1;
   }

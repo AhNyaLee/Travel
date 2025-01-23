@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="show">
 <h1 class="hero_title">Заказ: <%=@order.name%></h1>
 <div class="show_content">
@@ -7,16 +8,16 @@
         <p class="show_label">Начала тура:</p>
         <p class="show_label">Конец тура:</p>
         <p class="show_label">Цена тура:</p>
-        <p class="show_label"> ID клиента:</p>
+        <p class="show_label"> Клиент:</p>
         <p class="show_label"> ID страны:</p>
  </div>
     <div class="client-details">
-        <p class="show_input"><%=@order.number_order%></p>
-        <p class="show_input"><%=@order.name%></p>
-        <p class="show_input"><%=@order.start_date%></p>
-         <p class="show_input"><%=@order.end_date%></p>
-        <p class="show_input"><%=@order.price%></p>
-        <p class="show_input"><%=@order.id_client%></p>
+        <p class="show_input"><%=@order.number_order.presence || '-'%></p>
+        <p class="show_input"><%=@order.name.presence || '-'%></p>
+        <p class="show_input"><%=@order.start_date.presence || '-'%></p>
+         <p class="show_input"><%=@order.end_date.presence || '-'%></p>
+        <p class="show_input"><%=@order.price.presence || '-'%></p>
+        <p class="show_input"><%=@order.client&.fullname.presence|| '-'%></p>
         <p class="show_input"> 
            
     <% if @order.country_id.blank? %>
@@ -30,8 +31,9 @@
     </div>
 </div>
 <div class="show_button" >
- <p class="new_button button "><%=link_to "Все заказы",histore_orders_path %></p>
-<p class="button"><%=link_to "Изменить данные о заказе ", edit_histore_order_path(@order)%></p>
-<div class="show_button button "><%= button_to 'Удалить заказ', histore_order_path(@order), method: :delete %></div>
+ <p class="new_button button click "><%=link_to "Все заказы",histore_orders_path %></p>
+<p class="new_button button click"><%=link_to "Изменить данные о заказе ", edit_histore_order_path(@order)%></p>
+<div class=" new_button show_button button click "><%= button_to 'Удалить заказ', histore_order_path(@order), method: :delete %></div>
+</div>
 </div>
 </div>

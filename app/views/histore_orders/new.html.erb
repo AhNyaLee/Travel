@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="new">
   <h2 class="hero_title">Новый заказ:</h2>
   
@@ -26,32 +27,25 @@
       <div class="form__grid-item">
       <p class="form__label"><%= form.label :id_client, 'Клиент:' %></p>
         <p class="form__input">
-          <%= form.collection_select :id_client, ClientList.all, :id_client, :fullname, prompt: 'Выберите клиента', required: true %>
+          <%= form.collection_select :id_client, ClientList.all, :id, :fullname, prompt: 'Выберите клиента', required: true %>
         </p>
       </div>
-<div class="form__grid-item">
-  <p class="form__label"><%= form.label :country_id, 'Страны:', class: 'text-black' %></p>
-  <p class="form__input">
-    <div class="form-check-list">
-      <%= form.collection_check_boxes :country_id, Country.all, :id, :name do |b| %>
-        <div class="form-check">
-          <%= b.check_box(class: 'form-check-input') %>
-          <%= b.label(class: 'form-check-label text-black') %>
-        </div>
-      <% end %>
-    </div>
-  </p>
-</div>
+  <div class="form__grid-item">
+      <p class="form__label"><%= form.label :country_id, 'Страна:' %></p>
+        <p class="form__input">
+          <%= form.collection_select :country_id, Country.all, :id, :name, prompt: 'Выберите страну', required: true %>
+        </p>
+      </div>
 
       
       <div class="new_flex">
-        <button class="new_button button">
+        <button class="new_button button click">
           <%= form.submit 'Добавить заказ' %>
         </button>
-        <p class="new_button button"><%= link_to "Все заказы", histore_orders_path %></p>
+        <p class="new_button button click"><%= link_to "Все заказы", histore_orders_path %></p>
       </div>
     <% end %>
   </div>
 </div>
-
+</div>
 

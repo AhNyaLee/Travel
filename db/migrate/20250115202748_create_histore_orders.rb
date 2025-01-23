@@ -3,17 +3,14 @@ class CreateHistoreOrders < ActiveRecord::Migration[8.0]
     create_table :histore_orders do |t|
       t.integer :number_order
       t.text :name
-      t.text :start_date
-      t.text :end_date
+      t.date :start_date
+      t.date :end_date
       t.integer :price
-      t.integer :id_client  
-      t.text :country_id
+      t.references :id_client, foreign_key: { to_table: :client_lists }, column: :id_client
+      t.references :country, foreign_key: { to_table: :countries }, column: :country_id
 
       t.timestamps
     end
-
-   
-    add_foreign_key :histore_orders, :client_lists, column: :id_client
 
   end
 end

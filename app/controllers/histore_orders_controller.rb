@@ -3,11 +3,20 @@ class HistoreOrdersController < ApplicationController
 
   def create
     @order = HistoreOrder.new(order_params)
-    if @order.save!
-      redirect_to @order
-    else
-      Rails.logger.error(@order.errors.full_messages)
-      flash.now[:alert] = @order.errors.full_messages.to_sentence
+  
+    begin
+      if @order.save!
+        redirect_to @order
+      else
+        flash.now[:alert] = @order.errors.full_messages.to_sentence
+        render :new
+      end
+    rescue ActiveRecord::RecordInvalid => e
+      # Логируем ошибку в панель разработчика
+      Rails.logger.error("Ошибка при сохранении заказа: #{e.message}")
+      
+      # Выводим сообщение об ошибке пользователю
+      flash.now[:alert] = "Не удалось создать заказ: #{e.message}"
       render :new
     end
   end
@@ -32,7 +41,7 @@ class HistoreOrdersController < ApplicationController
   
   private
   def order_params
-    params.require(:histore_order).permit(:number_order, :name, :start_date, :end_date, :price, :id_client, country_id: [])
+    params.require(:histore_order).permit(:number_order, :name, :start_date, :end_date, :price, :id_client, :country_id)
   end 
 
   def set_order

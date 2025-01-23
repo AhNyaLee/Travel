@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="edit">
 <h2 class="hero_title">Редактирование данных о стране: </h2>
 <div class="form">
@@ -27,11 +28,12 @@
  <p class="form__input"><%=form.text_field :capital, required: false%></p>
  </div>
  <div class="edit_button">
-    <button class=" button ">
+    <button class=" button click">
       <%= form.submit 'Изменить страну' %>
     </button>
-      <p class=" button "><%=link_to "Все клиенты", countries_path%></p>
+      <p class=" button click "><%=link_to "Все страны", countries_path%></p>
   </div>
 <%end%>
+</div>
 </div>
 </div>

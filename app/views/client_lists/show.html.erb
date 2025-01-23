@@ -1,24 +1,46 @@
-<div class="show">
-<h1 class="hero_title">Клиент: <%=@client_list.name%></h1>
-<div class="show_content">
- <div class="client-labels">
-        <p class="show_label">Номер клиента:</p>
-        <p class="show_label">ФИО:</p>
-        <p class="show_label">Дата рождения:</p>
-        <p class="show_label">Номер телефона:</p>
-        <p class="show_label">Email:</p>
- </div>
-    <div class="client-details">
-        <p class="show_input"><%=@client_list.id_client%></p>
-        <p class="show_input"><%=@client_list.fullname%></p>
-        <p class="show_input"><%=@client_list.birthday%></p>
-        <p class="show_input"><%=@client_list.phone%></p>
-        <p class="show_input"><%=@client_list.email%></p>
+<div class="wrapper">
+    <div class="show">
+            
+        <h1 class="hero_title">Клиент: <%=@client_list.name%></h1>
+
+        <div class="show_content">
+
+            <div class="client-labels">
+                    <p class="show_label">Номер клиента:</p>
+                    <p class="show_label">ФИО:</p>
+                    <p class="show_label">Дата рождения:</p>
+                    <p class="show_label">Номер телефона:</p>
+                    <p class="show_label">Email:</p>
+            </div>
+
+            <div class="client-details">
+                <p class="show_input"><%=@client_list.id_client.presence || '-'%></p>
+                <p class="show_input"><%=@client_list.fullname.presence || '-'%></p>
+                <p class="show_input"><%=@client_list.birthday.presence || '-'%></p>
+                <p class="show_input"><%=@client_list.phone.presence || '-'%></p>
+                <p class="show_input"><%=@client_list.email.presence || '-'%></p>
+            </div>
+
+        </div>
+
+            <div class="show_button " >
+                <p class="button click"><%=link_to "Все клиенты", client_lists_path%></p>
+                <p class="button click"><%=link_to "Изменить данные о клиенте ", edit_client_list_path(@client_list)%></p>
+                <div class="show_button button click "><%= button_to 'Удалить клиента', client_list_path(@client_list), method: :delete %></div>
+           </div>
+
+                <div class="all_order">
+                    <h3>Все заказы:</h3>
+                        <% if @orders.present? %>
+                            <% @orders.each do |order| %>
+                                    <p class="click">
+                                    <%= link_to "#{order.name} ", histore_order_path(order) %>
+                                    </p>
+                            <% end %>
+                        <% else %>
+                            <p>Нет заказов для отображения.</p>
+                       <% end %>
+                </div>
     </div>
-</div>
-<div class="show_button" >
-<p class="button"><%=link_to "Все клиенты", client_lists_path%></p>
-<p class="button"><%=link_to "Изменить данные о клиенте ", edit_client_list_path(@client_list)%></p>
-<div class="show_button button "><%= button_to 'Удалить клиента', client_list_path(@client_list), method: :delete %></div>
-</div>
+      
 </div>

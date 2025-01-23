@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="show">
 <h1 class="hero_title">Страна: <%=@country.name%></h1>
 <div class="show_content">
@@ -11,18 +12,34 @@
          <p class="show_label">Столица:</p>
  </div>
     <div class="client-details">
-        <p class="show_input"><%=@country.id%></p>
-        <p class="show_input"><%=@country.name%></p>
-        <p class="show_input"><%=@country.country_code%></p>
-        <p class="show_input"><%=@country.language%></p>
-         <p class="show_input"><%=@country.currency%></p>
-        <p class="show_input"><%=@country.timezone%></p>
-        <p class="show_input"><%=@country.capital%></p>
+        <p class="show_input"><%=@country.id.presence || '-'%></p>
+        <p class="show_input"><%=@country.name.presence || '-'%></p>
+        <p class="show_input"><%=@country.country_code.presence || '-'%></p>
+        <p class="show_input"><%=@country.language.presence || '-'%></p>
+         <p class="show_input"><%=@country.currency.presence || '-'%></p>
+        <p class="show_input"><%=@country.timezone.presence || '-'%></p>
+        <p class="show_input"><%=@country.capital.presence || '-'%></p>
     </div>
 </div>
 <div class="show_button" >
- <p class="new_button button "><%=link_to "Все страны",countries_path %></p>
-<p class="button"><%=link_to "Изменить данные о стране ", edit_country_path(@country)%></p>
-<div class="show_button button "><%= button_to 'Удалить страну', country_path(@country), method: :delete %></div>
+ <p class="new_button button click "><%=link_to "Все страны",countries_path %></p>
+<p class=" new_button button click"><%=link_to "Изменить данные о стране ", edit_country_path(@country)%></p>
+<div class="new_button show_button button click"><%= button_to 'Удалить страну', country_path(@country), method: :delete %></div>
+</div>
+
+<div class="all_order">
+                    <h3>Все заказы:</h3>
+                        <% if @orders.present? %>
+                            <% @orders.each do |order| %>
+                                    <p class="click">
+                                    <%= link_to "Номер заказа: #{order.number_order} ", histore_order_path(order) %>
+                                    </p>
+                            <% end %>
+                        <% else %>
+                            <p>Нет заказов для отображения.</p>
+                       <% end %>
+                </div>
+
+</div>
 </div>
 </div>

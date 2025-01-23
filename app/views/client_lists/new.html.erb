@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="new">
 <h2 class="hero_title">Новый клиент:</h2>
   
@@ -19,10 +20,12 @@
   <p class="form__labe"><%=form.label :patronymic, 'Отчество клиента:'%></p>
   <p class="form__input"><%=form.text_field :patronymic, required: true%></p>
  </div>
+
  <div class="form__grid-item">
-  <p class="form__labe"><%=form.label :birthday, 'День рождение клиента:'%></p>
-  <p class="form__input"><%=form.text_field :birthday, required: true%></p>
- </div>
+        <p class="form__label"><%=form.label :birthday, 'День рождение клиента:'%></p>
+        <p class="form__input"><%= form.date_field :birthday, required: true %></p>
+  </div>
+
  <div class="form__grid-item">
   <p class="form__labe"><%=form.label :phone, 'Номер телефона клиента:'%></p>
   <p class="form__input"><%=form.telephone_field :phone, required: false%></p>
@@ -32,11 +35,12 @@
  <p class="form__input"><%=form.email_field :email, required: false%></p>
  </div>
  <div class= "new_flex">
-  <button class="new_button button ">
+  <button class="new_button button click">
     <%= form.submit 'Создать клиента' %>
   </button>
-  <p class="new_button button "><%=link_to "Все клиенты", client_lists_path%></p>
+  <p class="new_button button click"><%=link_to "Все клиенты", client_lists_path%></p>
   </div>
 <%end%>
+</div>
 </div>
 </div>

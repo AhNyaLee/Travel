@@ -1,3 +1,6 @@
+body{
+  background: azure;
+}
 .list-reset {
     margin: 0;
     padding: 0;
@@ -89,4 +92,27 @@
 .nvigation_content{
   font-size: 50px;
   padding-bottom: 14px;
+}
+
+.button:hover::before, .button:active::before, .button:focus::before {
+  opacity: 1;
+}
+.click {
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+
+  &:hover {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  }
+}
+
+.all_order{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 25px;
+  padding-top: 30px;
+
+
 }

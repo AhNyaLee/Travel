@@ -1,9 +1,17 @@
 class ClientListsController < ApplicationController
 
   before_action :set_client_list, only: %i[update show destroy edit]
+  
   def create
-    client=ClientList.create(client_list_params )
-    redirect_to "/client_lists/#{client.id})"
+
+    @client_list=ClientList.create(client_list_params )
+    if @client_list.save
+      redirect_to @client_list
+    else
+      Rails.logger.error(@client_list.errors.full_messages)
+      flash.now[:alert] = @client_list.errors.full_messages.to_sentence
+      render :new
+    end
   end
    
   def update
@@ -24,6 +32,9 @@ class ClientListsController < ApplicationController
       @client_list=ClientList.new
   end  
   
+  def show
+    @orders = HistoreOrder.where(id_client: @client_list.id)
+  end  
  
 
   private

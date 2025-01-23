@@ -5,7 +5,7 @@ class CreateClientLists < ActiveRecord::Migration[8.0]
       t.text :name
       t.text :surname
       t.text :patronymic
-      t.text :birthday
+      t.date :birthday
       t.text :email
       t.text :phone
 

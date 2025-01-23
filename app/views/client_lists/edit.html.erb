@@ -1,3 +1,4 @@
+<div class="wrapper">
 <div class="edit">
 <h2 class="hero_title">Редактирование данных о клиенте: </h2>
 <div class="form">
@@ -20,7 +21,7 @@
  </div>
  <div class="form__grid-item">
  <p class="form__labe"><%=form.label :birthday, 'День рождение клиента:'%></p>
- <p class="form__input"><%=form.text_field :birthday, required: true%></p>
+  <p class="form__input"><%= form.date_field :birthday, required: true %></p>
  </div>
  <div class="form__grid-item">
  <p class="form__labe"><%=form.label :phone, 'Номер телефона клиента:'%></p>
@@ -31,11 +32,12 @@
  <p class="form__input"><%=form.email_field :email, required: false%></p>
  </div>
  <div class="edit_button">
-    <button class=" button ">
+    <button class=" button click">
       <%= form.submit 'Изменить клиента' %>
     </button>
-      <p class=" button "><%=link_to "Все клиенты", client_lists_path%></p>
+      <p class=" button click"><%=link_to "Все клиенты", client_lists_path%></p>
   </div>
 <%end%>
+</div>
 </div>
 </div>

@@ -11,6 +11,5 @@ class CreateCountries < ActiveRecord::Migration[8.0]
       t.timestamps
     end
 
-    add_foreign_key :countries, :histore_orders, column: :country_id
   end
 end

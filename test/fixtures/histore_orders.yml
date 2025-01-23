@@ -7,7 +7,7 @@ one:
   end_date: MyText
   price: 1
   id_client: 1
-  id_country: 1
+  country_id: 1
 
 two:
   number_order: 1
@@ -16,4 +16,4 @@ two:
   end_date: MyText
   price: 1
   id_client: 1
-  id_country: 1
+  country_id: 1

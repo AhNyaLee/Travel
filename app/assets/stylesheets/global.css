@@ -41,6 +41,8 @@ html {
     font-size: inherit;
     line-height: inherit;
     letter-spacing: inherit;
+    background: none;
+    border-color: aliceblue;
   }
   
   a {
@@ -52,10 +54,7 @@ html {
     resize: vertical;
   }
   
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
-  
+ 
   ::placeholder {
     font-size: 24px;
     font-weight: initial;
